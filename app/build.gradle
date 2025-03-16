@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     namespace 'corp.blayzer.randomit'  // Replace with your app's namespace
-    compileSdk  33
+    compileSdk  34
     defaultConfig {
         applicationId "corp.blayzer.randomit"
         minSdk  21
-        targetSdk  33
-        versionName '2.0'
+        targetSdk  34
+        versionName '3.0'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         versionCode 6
     }
