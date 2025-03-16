@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="visible" type="id"/>
+    <item name="masked" type="id"/>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="choicesOfNum">#FFC107</color>
+    <color name="colorDispNum">#C39A94</color>
+    <color name="mainBackGroundHalf1">#69F0AE</color>
+    <color name="inputText">#FFFFFF</color>
+    <color name="result_color_text">#018786</color>
+    <color name="numberTipText">#ff1744</color>
+</resources>

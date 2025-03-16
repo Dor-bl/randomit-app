@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="corp.blayzer.randomit.SubmitStringsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/AppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight = "1"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/textStrView">
+
+        <LinearLayout
+            android:id="@+id/linearStringLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:background="@color/mainBackGroundHalf1"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/firstVal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="@+id/linearStringLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/linearStringLayout">
+
+                <EditText
+                    android:id="@+id/firstVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/inputText"
+                    android:ems="10"
+                    android:hint="@string/firstString"
+                    android:inputType="text"
+                    android:maxLength="9"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@android:style/TextAppearance.Material"
+                    android:textColorHint="@color/inputText"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearStringLayout"
+                    app:layout_constraintHorizontal_bias="0.502"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/secVal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="@+id/linearStringLayout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstVal_layout">
+
+                <EditText
+                    android:id="@+id/secVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/inputText"
+                    android:ems="10"
+                    android:hint="@string/secondString"
+                    android:inputType="text"
+                    android:maxLength="9"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@android:style/TextAppearance.Material"
+                    android:textColorHint="@color/inputText" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/threeVal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/linearStringLayout"
+                app:layout_constraintEnd_toEndOf="@+id/linearStringLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secVal_layout">
+
+                <EditText
+                    android:id="@+id/thirdVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/inputText"
+                    android:ems="10"
+                    android:hint="@string/threeString"
+                    android:inputType="text"
+                    android:maxLength="9"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@android:style/TextAppearance.Material"
+                    android:textColorHint="@color/inputText"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintHorizontal_bias="0.502"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fourVal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/linearStringLayout"
+                app:layout_constraintEnd_toEndOf="@+id/linearStringLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/threeVal_layout">
+
+                <EditText
+                    android:id="@+id/fourVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/inputText"
+                    android:ems="10"
+                    android:hint="@string/fourString"
+                    android:inputType="text"
+                    android:maxLength="9"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@android:style/TextAppearance.Material"
+                    android:textColorHint="@color/inputText"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintHorizontal_bias="0.502"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fiveVal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/linearStringLayout"
+                app:layout_constraintEnd_toEndOf="@+id/linearStringLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fourVal_layout">
+
+                <EditText
+                    android:id="@+id/fiveVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/inputText"
+                    android:ems="10"
+                    android:hint="@string/fiveString"
+                    android:inputType="text"
+                    android:maxLength="9"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@android:style/TextAppearance.Material"
+                    android:textColorHint="@color/inputText"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintHorizontal_bias="0.502"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sixVal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/linearStringLayout"
+                app:layout_constraintEnd_toEndOf="@+id/linearStringLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fiveVal_layout">
+
+                <EditText
+                    android:id="@+id/sixVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/inputText"
+                    android:ems="10"
+                    android:hint="@string/sixString"
+                    android:inputType="text"
+                    android:maxLength="9"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@android:style/TextAppearance.Material"
+                    android:textColorHint="@color/inputText"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintHorizontal_bias="0.502"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sevenVal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/linearStringLayout"
+                app:layout_constraintEnd_toEndOf="@+id/linearStringLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sixVal_layout">
+
+                <EditText
+                    android:id="@+id/sevenVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/inputText"
+                    android:ems="10"
+                    android:hint="@string/sevenString"
+                    android:inputType="text"
+                    android:maxLength="9"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@android:style/TextAppearance.Material"
+                    android:textColorHint="@color/inputText"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintHorizontal_bias="0.502"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/eightVal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/linearStringLayout"
+                app:layout_constraintEnd_toEndOf="@+id/linearStringLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sevenVal_layout">
+
+                <EditText
+                    android:id="@+id/eightVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/inputText"
+                    android:ems="10"
+                    android:hint="@string/eightString"
+                    android:inputType="text"
+                    android:maxLength="9"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@android:style/TextAppearance.Material"
+                    android:textColorHint="@color/inputText"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintHorizontal_bias="0.502"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nineVal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/linearStringLayout"
+                app:layout_constraintEnd_toEndOf="@+id/linearStringLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eightVal_layout">
+
+                <EditText
+                    android:id="@+id/nineVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/inputText"
+                    android:ems="10"
+                    android:hint="@string/ninthString"
+                    android:inputType="text"
+                    android:maxLength="9"
+                    android:selectAllOnFocus="false"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textAppearance="@android:style/TextAppearance.Material"
+                    android:textColorHint="@color/inputText"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintHorizontal_bias="0.502"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <TextView
+        android:id="@+id/textStrView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/instMainStrAct"
+        android:textAppearance="@android:style/TextAppearance"
+        android:textColor="#FF5722"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AppBar"></TextView>
+        <!--app:layout_constraintTop_toBottomOf="@+id/AppBar" />-->
+
+    <FrameLayout
+        android:id="@+id/layOutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_change_history_black_24dp"
+            app:fabSize="normal"
+            tools:text="@string/GoButton" />
+
+    </FrameLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@android:color/white"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
