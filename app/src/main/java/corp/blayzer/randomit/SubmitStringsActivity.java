@@ -70,6 +70,7 @@ public class SubmitStringsActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 layoutPointer= getLastInvisibleLayout(layoutsArr);
+                assert layoutPointer != null;
                 RandomFunctions.addChoiceOption(layoutPointer);  //call Add choiceOption function in order to make new option visible
             }
         });

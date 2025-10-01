@@ -11,4 +11,11 @@
     <color name="inputText">#FFFFFF</color>
     <color name="result_color_text">#018786</color>
     <color name="numberTipText">#ff1744</color>
+    <!-- Suggested Vibrant Colors -->
+    <color name="vibrantBlue">#0077B6</color>
+    <color name="vibrantGreen">#06D6A0</color>
+    <color name="vibrantOrange">#F77F00</color>
+    <color name="lightTextColor">#FFFFFF</color>
+    <color name="darkTitleColor">#4A4A4A</color>
+    <color name="vibrantButtonTextColor">#212121</color>
 </resources>
