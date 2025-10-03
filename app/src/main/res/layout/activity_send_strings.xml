@@ -14,7 +14,8 @@
         android:id="@+id/AppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -68,6 +69,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
+                    android:autofillHints="name"
                     android:backgroundTint="@color/inputText"
                     android:ems="10"
                     android:hint="@string/firstString"
@@ -411,7 +413,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AppBar"></TextView>
+        app:layout_constraintTop_toBottomOf="@+id/AppBar" />
         <!--app:layout_constraintTop_toBottomOf="@+id/AppBar" />-->
 
     <FrameLayout
@@ -433,6 +435,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:clickable="true"
+            android:contentDescription="@string/GoButton"
             android:focusable="true"
             android:src="@drawable/ic_change_history_black_24dp"
             app:fabSize="normal"
@@ -448,6 +451,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
+        android:contentDescription="sendNumbers_fab_button"
         android:focusable="true"
         android:tint="@android:color/white"
         app:fabSize="normal"
