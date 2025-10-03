@@ -76,9 +76,8 @@ public class MainActivity extends AppCompatActivity
                 if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                     drawerLayout.closeDrawer(GravityCompat.START);
                 } else {
-                    // If the drawer is not open, you might want to disable this callback
-                    // and then call onBackPressed() again to let the system handle it (which is what this does)
-                    getOnBackPressedDispatcher().onBackPressed();
+                    // If the drawer is not open, finish the activity to handle back navigation properly
+                    finish();
                 }
             }
         };
