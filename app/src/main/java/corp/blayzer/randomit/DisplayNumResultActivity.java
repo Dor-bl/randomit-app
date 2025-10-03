@@ -24,7 +24,6 @@ public class DisplayNumResultActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Result");
 
         /** Get the Intent that started this activity and extract the integer*/
