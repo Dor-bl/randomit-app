@@ -10,8 +10,12 @@
     tools:context="corp.blayzer.randomit.SubmitNumbersActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
@@ -58,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
+                android:autofillHints=""
                 android:backgroundTint="@color/inputText"
                 android:ems="10"
                 android:hint="@string/minValue"
@@ -93,6 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:autofillHints=""
                 android:backgroundTint="@color/inputText"
                 android:ems="10"
                 android:hint="@string/maxValue"
@@ -147,6 +153,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:clickable="true"
+            android:contentDescription="sendNumbers_fab_button"
             android:focusable="true"
             android:src="@drawable/ic_change_history_black_24dp"
             app:fabSize="normal"
