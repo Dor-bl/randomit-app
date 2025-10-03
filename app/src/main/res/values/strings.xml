@@ -35,4 +35,7 @@
     <string name="numbers_activity_title">Random Numbers</string>
     <string name="choices_activity_title">Random Choices</string>
     <string name="str_result_title">Your selected choice is:</string>
+    <string name="welcomeTitle">Welcome to RandomIt</string>
+    <string name="dice">Dice</string>
+    <string name="initial_dice_value">\?</string>
 </resources>

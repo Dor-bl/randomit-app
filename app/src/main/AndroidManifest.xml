@@ -45,6 +45,11 @@
         </activity>
 
         <activity
+            android:name=".Dice"
+            android:label="Dice Roller"
+            android:parentActivityName=".MainActivity" />
+        
+        <activity
             android:name=".DisplayNumResultActivity"
             android:parentActivityName=".SubmitNumbersActivity">
         </activity>

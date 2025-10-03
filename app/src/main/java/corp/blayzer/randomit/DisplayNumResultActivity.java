@@ -3,6 +3,8 @@ package corp.blayzer.randomit;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -14,6 +16,15 @@ public class DisplayNumResultActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_numbers);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
+        getSupportActionBar().setTitle("Result");
 
         /** Get the Intent that started this activity and extract the integer*/
         Intent intent= getIntent();
@@ -29,5 +40,12 @@ public class DisplayNumResultActivity extends AppCompatActivity {
         TextView textTip = findViewById(R.id.textTip) ;
         textNumView.setText(randString);
         textTip.setText(tipStrVal);
+    }
+
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed(); // Go back to the previous activity
+        return true;
     }
 }

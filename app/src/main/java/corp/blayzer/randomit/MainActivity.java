@@ -2,7 +2,11 @@ package corp.blayzer.randomit;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.activity.OnBackPressedCallback;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -17,7 +21,10 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-    TextView btn_nums,btn_choices ;
+    TextView btn_nums,btn_choices, btn_dice ;
+
+    private DrawerLayout drawerLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,53 +33,71 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab =  findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView =  findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        //handle click on numbers option
         btn_nums = findViewById(R.id.numsTextView);
-        btn_nums.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v1){
-                Intent launchNumbersActivity= new Intent(MainActivity.this,SubmitNumbersActivity.class);
-                startActivity(launchNumbersActivity);
-            }
-        });
-
-        // Handle click on choices option
         btn_choices = findViewById(R.id.choicesTextView);
-        btn_choices.setOnClickListener(new View.OnClickListener(){
+        btn_dice = findViewById(R.id.diceTextView);
+
+        btn_nums.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this,SubmitNumbersActivity.class);
+            startActivity(intent);
+        });
+
+        btn_choices.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this,SubmitStringsActivity.class);
+            startActivity(intent);
+        });
+
+        btn_dice.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, Dice.class);
+            startActivity(intent);
+        });
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(view -> {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "Hey check out my app at: https://play.google.com/store/apps/details?id=corp.blayzer.randomit");
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
+        });
+
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        // Create a callback for handling the back press
+        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
             @Override
-            public void onClick(View v1){
-                Intent launchNumbersActivity= new Intent(MainActivity.this,SubmitStringsActivity.class);
-                startActivity(launchNumbersActivity);
+            public void handleOnBackPressed() {
+                // Handle the back button event
+                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                } else {
+                    // If the drawer is not open, finish the activity to handle back navigation properly
+                    finish();
+                }
+            }
+        };
+
+        // Add the callback to the dispatcher
+        getOnBackPressedDispatcher().addCallback(this, callback);
+
+        // You can also listen for drawer open/close events to enable/disable the callback,
+        // which is an even cleaner approach.
+        drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                callback.setEnabled(true);
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                callback.setEnabled(false);
             }
         });
-    }
-
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
     }
 
     @Override
