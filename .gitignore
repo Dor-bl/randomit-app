@@ -9,3 +9,5 @@
 
 # Ignore the entire .idea folder
 .idea/
+/upload_certificate.pem
+/keystore.jks
