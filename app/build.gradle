@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
-android {namespace 'corp.blayzer.randomit'  // Replace with your app's namespace
+android {
+    namespace 'corp.blayzer.randomit'  // Replace with your app's namespace
     compileSdk  34
     defaultConfig {
         applicationId "corp.blayzer.randomit"
