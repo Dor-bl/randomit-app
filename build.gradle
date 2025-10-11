@@ -7,7 +7,7 @@ buildscript {
         mavenCentral()  // Replace jcenter() with mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:8.2.2" // Latest stable version
+        classpath 'com.android.tools.build:gradle:8.12.0' // Latest stable version
     }
 }
 
