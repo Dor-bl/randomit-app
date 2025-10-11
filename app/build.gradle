@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'corp.blayzer.randomit'
-    compileSdk 36
+    compileSdkVersion 36
 
     defaultConfig {
         applicationId "corp.blayzer.randomit"
